@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="44" viewBox="0 0 184 44" role="img" aria-labelledby="title desc">
+  <title id="title">The Daily Brew</title>
+  <desc id="desc">Professional coffee cup logo for The Daily Brew cafe</desc>
+  <defs>
+    <linearGradient id="cupGradient" x1="8" y1="7" x2="34" y2="37" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4C95D"/>
+      <stop offset="1" stop-color="#C78A42"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="22" cy="22" r="21" fill="#FFFFFF" opacity=".13"/>
+    <circle cx="22" cy="22" r="16.5" stroke="#F4C95D" stroke-width="1.5"/>
+    <path fill="url(#cupGradient)" d="M13 18h16v6.3c0 4.7-3.5 8.2-8 8.2s-8-3.5-8-8.2V18Z"/>
+    <path stroke="#F7E9C8" stroke-linecap="round" stroke-width="2" d="M17 15c0-1.8 2-1.8 2-3.6M22 15c0-1.8 2-1.8 2-3.6"/>
+    <path stroke="#F7E9C8" stroke-width="2" d="M29 20h2.2c2.1 0 3.8 1.6 3.8 3.6s-1.7 3.6-3.8 3.6H29"/>
+    <path stroke="#F7E9C8" stroke-linecap="round" stroke-width="1.8" d="M15.5 34h13"/>
+    <text x="52" y="20" fill="#FFFFFF" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing=".5">The Daily</text>
+    <text x="52" y="35" fill="#F4C95D" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="2.8">BREW</text>
+  </g>
+</svg>

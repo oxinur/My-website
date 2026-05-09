@@ -1,0 +1,29 @@
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Field &amp; Larder</title>
+  <desc id="logoDesc">Fresh British groceries — premium delivery service logo</desc>
+
+  <!-- Icon mark: stylised wheat sheaf -->
+  <g transform="translate(6, 4)">
+    <!-- Left stalk -->
+    <path d="M24 56 Q18 38 13 14" stroke="#152B47" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Centre stalk -->
+    <path d="M24 56 Q24 36 24 8" stroke="#152B47" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Right stalk -->
+    <path d="M24 56 Q30 38 35 14" stroke="#152B47" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Left grain head -->
+    <ellipse cx="12" cy="10" rx="4" ry="7" fill="#1E3A5F" transform="rotate(-20 12 10)"/>
+    <!-- Centre grain head -->
+    <ellipse cx="24" cy="5" rx="4" ry="7" fill="#1E3A5F"/>
+    <!-- Right grain head -->
+    <ellipse cx="36" cy="10" rx="4" ry="7" fill="#1E3A5F" transform="rotate(20 36 10)"/>
+    <!-- Binding tie in warm gold -->
+    <path d="M15 41 Q24 46 33 41" stroke="#C47D0B" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M16 45 Q24 49 32 45" stroke="#C47D0B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <!-- Small leaf accent -->
+    <path d="M36 14 Q44 9 46 17 Q40 21 36 14Z" fill="#C47D0B" opacity="0.85"/>
+  </g>
+
+  <!-- Logotype -->
+  <text x="60" y="29" fill="#1E3A5F" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700">Field &amp; Larder</text>
+  <text x="62" y="47" fill="#4B6887" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.2">FRESH BRITISH GROCERIES</text>
+</svg>

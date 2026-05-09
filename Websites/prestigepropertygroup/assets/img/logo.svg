@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56">
+  <!-- House/key icon -->
+  <polygon points="22,34 34,18 46,34" fill="#c8902e"/>
+  <rect x="25" y="34" width="18" height="16" fill="#c8902e"/>
+  <rect x="31" y="39" width="6" height="11" fill="#c8902e" opacity="0.5"/>
+  <!-- Vertical rule -->
+  <rect x="54" y="8" width="1.5" height="40" fill="#c8902e" opacity="0.6"/>
+  <!-- Company name -->
+  <text x="64" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">PRESTIGE</text>
+  <text x="64" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="400" fill="#c8902e" letter-spacing="3.5">PROPERTY GROUP</text>
+</svg>
