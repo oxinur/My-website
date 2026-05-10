@@ -1,33 +1,28 @@
-function toggleMobileNav(btn) {
-  const links = document.querySelector('.nav-links');
-  const open = links.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open);
-}
-
-// Close mobile nav when a link is clicked
+// Close mobile nav after a link click (Bootstrap collapse)
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.nav-links a').forEach(function (link) {
+  var collapseEl = document.getElementById('oxiNavCollapse');
+  if (!collapseEl) return;
+
+  document.querySelectorAll('#oxiNavCollapse .nav-link').forEach(function (link) {
     link.addEventListener('click', function () {
-      document.querySelector('.nav-links').classList.remove('open');
-      var btn = document.querySelector('.nav-hamburger');
-      if (btn) { btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      if (collapseEl.classList.contains('show') && window.bootstrap) {
+        var bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
+        bsCollapse.hide();
+      }
     });
   });
 });
 
 function filterPortfolio(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach((button) => button.classList.remove('active'));
+  document.querySelectorAll('.filter-btn').forEach(function (button) { button.classList.remove('active'); });
   btn.classList.add('active');
-
-  document.querySelectorAll('.portfolio-item').forEach((item) => {
-    item.style.display = cat === 'all' || item.dataset.cat === cat ? 'block' : 'none';
+  document.querySelectorAll('.portfolio-item').forEach(function (item) {
+    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
   });
 }
 
 function toggleFaq(el) {
-  const ans = el.nextElementSibling;
+  var ans = el.nextElementSibling;
   el.classList.toggle('open');
   ans.classList.toggle('open');
 }
-

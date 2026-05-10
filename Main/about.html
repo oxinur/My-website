@@ -29,7 +29,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="Logo/Oxinur_transparent_white.png">
 
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
@@ -38,10 +39,11 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/chatbot.css">
 
-  <!-- JSON-LD: AboutPage + Organization reference -->
+  <!-- JSON-LD: AboutPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -64,7 +66,6 @@
   }
   </script>
 
-  <!-- JSON-LD: Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,27 +78,29 @@
   </script>
 </head>
 <body>
-<!-- NAV -->
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;left:12px;top:12px;width:auto;height:auto;padding:8px 14px;background:#0a1628;color:#fff;z-index:9999;border-radius:6px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
-<nav aria-label="Primary">
-  <div class="nav-logo">
-    <a href="index.html" aria-label="Oxinur home"><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"></a>
-  </div>
-  <div class="nav-links">
-    <a href="index.html" id="nav-home">Home</a>
-    <a href="services.html" id="nav-services">Services</a>
-    <a href="portfolio.html" id="nav-portfolio">Portfolio</a>
-    <a href="pricing.html" id="nav-pricing">Pricing</a>
-    <a href="about.html" class="active" id="nav-about">About Us</a>
-    <a href="contact.html" id="nav-contact">Contact</a>
-    <a href="contact.html" class="nav-cta">Get a Quote</a>
-  </div>
-  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav(this)">
-    <span></span><span></span><span></span>
+
+<nav class="navbar navbar-expand-lg fixed-top oxi-nav" aria-label="Primary">
+  <a class="navbar-brand" href="index.html" aria-label="Oxinur home">
+    <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="28">
+  </a>
+  <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#oxiNavCollapse" aria-controls="oxiNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="oxi-bar"></span><span class="oxi-bar"></span><span class="oxi-bar"></span>
   </button>
+  <div class="collapse navbar-collapse justify-content-end" id="oxiNavCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Get a Quote</a></li>
+    </ul>
+  </div>
 </nav>
 
-<main class="page active" id="page-about" role="main"><span id="main-content"></span>
+<main class="page" id="page-about" role="main"><span id="main-content"></span>
   <div class="page-hero">
     <div class="page-hero-content">
       <span class="eyebrow" style="color: var(--gold-light); display:block; margin-bottom:12px;">Our Story</span>
@@ -144,33 +147,41 @@
         <span class="eyebrow">Our values</span>
         <h2 class="section-title">What we <em>stand for</em></h2>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
-        <div class="value-row">
-          <div class="value-num">01</div>
-          <div class="value-text">
-            <h4>Quality over quantity</h4>
-            <p style="font-size:14px; color: var(--gray-600); line-height: 1.65;">We'd rather build fewer, better websites than rush through projects. Every site gets proper attention and care.</p>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="value-row">
+            <div class="value-num">01</div>
+            <div class="value-text">
+              <h4>Quality over quantity</h4>
+              <p>We'd rather build fewer, better websites than rush through projects. Every site gets proper attention and care.</p>
+            </div>
           </div>
         </div>
-        <div class="value-row">
-          <div class="value-num">02</div>
-          <div class="value-text">
-            <h4>Transparent communication</h4>
-            <p style="font-size:14px; color: var(--gray-600); line-height: 1.65;">No jargon, no surprises. We keep you informed at every stage and give you honest advice.</p>
+        <div class="col-md-6">
+          <div class="value-row">
+            <div class="value-num">02</div>
+            <div class="value-text">
+              <h4>Transparent communication</h4>
+              <p>No jargon, no surprises. We keep you informed at every stage and give you honest advice.</p>
+            </div>
           </div>
         </div>
-        <div class="value-row">
-          <div class="value-num">03</div>
-          <div class="value-text">
-            <h4>Results-focused design</h4>
-            <p style="font-size:14px; color: var(--gray-600); line-height: 1.65;">Beautiful design is important, but so is performance. Every decision is made with your goals in mind.</p>
+        <div class="col-md-6">
+          <div class="value-row">
+            <div class="value-num">03</div>
+            <div class="value-text">
+              <h4>Results-focused design</h4>
+              <p>Beautiful design is important, but so is performance. Every decision is made with your goals in mind.</p>
+            </div>
           </div>
         </div>
-        <div class="value-row">
-          <div class="value-num">04</div>
-          <div class="value-text">
-            <h4>Long-term partnerships</h4>
-            <p style="font-size:14px; color: var(--gray-600); line-height: 1.65;">We're not just here to build your website and disappear. We're here for the long run, supporting your growth.</p>
+        <div class="col-md-6">
+          <div class="value-row">
+            <div class="value-num">04</div>
+            <div class="value-text">
+              <h4>Long-term partnerships</h4>
+              <p>We're not just here to build your website and disappear. We're here for the long run, supporting your growth.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -185,7 +196,10 @@
 
   <footer>
     <div class="footer-grid">
-      <div><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"><p class="footer-tagline">Professional web design for businesses that want to stand out.</p></div>
+      <div>
+        <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="26">
+        <p class="footer-tagline">Professional web design for businesses that want to stand out.</p>
+      </div>
       <div class="footer-col"><h4>Services</h4><a href="services.html">Websites</a><a href="services.html">E-Commerce</a></div>
       <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a></div>
       <div class="footer-col"><h4>Contact</h4><a href="mailto:oxinur22@gmail.com">oxinur22@gmail.com</a></div>
@@ -194,7 +208,8 @@
   </footer>
 </main>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/chatbot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>

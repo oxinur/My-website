@@ -29,7 +29,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="Logo/Oxinur_transparent_white.png">
 
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
@@ -38,6 +39,7 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/chatbot.css">
 
@@ -77,27 +79,29 @@
   </script>
 </head>
 <body>
-<!-- NAV -->
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;left:12px;top:12px;width:auto;height:auto;padding:8px 14px;background:#0a1628;color:#fff;z-index:9999;border-radius:6px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
-<nav aria-label="Primary">
-  <div class="nav-logo">
-    <a href="index.html" aria-label="Oxinur home"><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"></a>
-  </div>
-  <div class="nav-links">
-    <a href="index.html" id="nav-home">Home</a>
-    <a href="services.html" id="nav-services">Services</a>
-    <a href="portfolio.html" class="active" id="nav-portfolio">Portfolio</a>
-    <a href="pricing.html" id="nav-pricing">Pricing</a>
-    <a href="about.html" id="nav-about">About Us</a>
-    <a href="contact.html" id="nav-contact">Contact</a>
-    <a href="contact.html" class="nav-cta">Get a Quote</a>
-  </div>
-  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav(this)">
-    <span></span><span></span><span></span>
+
+<nav class="navbar navbar-expand-lg fixed-top oxi-nav" aria-label="Primary">
+  <a class="navbar-brand" href="index.html" aria-label="Oxinur home">
+    <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="28">
+  </a>
+  <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#oxiNavCollapse" aria-controls="oxiNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="oxi-bar"></span><span class="oxi-bar"></span><span class="oxi-bar"></span>
   </button>
+  <div class="collapse navbar-collapse justify-content-end" id="oxiNavCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Get a Quote</a></li>
+    </ul>
+  </div>
 </nav>
 
-<main class="page active" id="page-portfolio" role="main"><span id="main-content"></span>
+<main class="page" id="page-portfolio" role="main"><span id="main-content"></span>
   <div class="page-hero">
     <div class="page-hero-content">
       <span class="eyebrow" style="color: var(--gold-light); display:block; margin-bottom:12px;">Our Work</span>
@@ -108,21 +112,21 @@
 
   <div class="section">
     <div class="portfolio-filter">
-      <button class="filter-btn active" onclick="filterPortfolio('all', this)">All Projects</button>
-      <button class="filter-btn" onclick="filterPortfolio('website', this)">Websites</button>
-      <button class="filter-btn" onclick="filterPortfolio('ecommerce', this)">E-Commerce</button>
-      <button class="filter-btn" onclick="filterPortfolio('branding', this)">Branding</button>
+      <button class="filter-btn active" type="button" onclick="filterPortfolio('all', this)">All Projects</button>
+      <button class="filter-btn" type="button" onclick="filterPortfolio('website', this)">Websites</button>
+      <button class="filter-btn" type="button" onclick="filterPortfolio('ecommerce', this)">E-Commerce</button>
+      <button class="filter-btn" type="button" onclick="filterPortfolio('branding', this)">Branding</button>
     </div>
     <div class="portfolio-grid" id="portfolio-grid">
 
-      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/Ironforge/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/Ironforge/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/Websites/Ironforge/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/Websites/Ironforge/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="IronForge Fitness Club preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/Websites/Ironforge/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/Websites/Ironforge/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="IronForge mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -134,14 +138,14 @@
         </div>
       </div>
 
-      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/kingsbridgesolicitors/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/kingsbridgesolicitors/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/Websites/kingsbridgesolicitors/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/Websites/kingsbridgesolicitors/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Kingsbridge Solicitors preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/Websites/kingsbridgesolicitors/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/Websites/kingsbridgesolicitors/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Kingsbridge Solicitors mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -153,14 +157,14 @@
         </div>
       </div>
 
-      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/prestigepropertygroup/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="website" onclick="window.open('Portfolio/Websites/prestigepropertygroup/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/Websites/prestigepropertygroup/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/Websites/prestigepropertygroup/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Prestige Property Group preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/Websites/prestigepropertygroup/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/Websites/prestigepropertygroup/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Prestige Property mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -172,14 +176,14 @@
         </div>
       </div>
 
-      <div class="portfolio-item" data-cat="branding" onclick="window.open('Portfolio/Brand/%20The-GildedFork/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="branding" onclick="window.open('Portfolio/Brand/%20The-GildedFork/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/Brand/%20The-GildedFork/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/Brand/%20The-GildedFork/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="The Gilded Fork preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/Brand/%20The-GildedFork/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/Brand/%20The-GildedFork/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="The Gilded Fork mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -191,14 +195,14 @@
         </div>
       </div>
 
-      <div class="portfolio-item" data-cat="branding" onclick="window.open('Portfolio/Brand/the-daily-brew/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="branding" onclick="window.open('Portfolio/Brand/the-daily-brew/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/Brand/the-daily-brew/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/Brand/the-daily-brew/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="The Daily Brew preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/Brand/the-daily-brew/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/Brand/the-daily-brew/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="The Daily Brew mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -210,14 +214,14 @@
         </div>
       </div>
 
-      <div class="portfolio-item" data-cat="ecommerce" onclick="window.open('Portfolio/E-commarce/Field%20%26%20Larder/index.html','_blank')" style="cursor:pointer">
+      <div class="portfolio-item" data-cat="ecommerce" onclick="window.open('Portfolio/E-commarce/Field%20%26%20Larder/index.html','_blank')">
         <div class="portfolio-thumb portfolio-preview">
           <div class="preview-desktop">
-            <iframe src="Portfolio/E-commarce/Field%20%26%20Larder/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="Portfolio/E-commarce/Field%20%26%20Larder/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Field &amp; Larder preview"></iframe>
           </div>
           <div class="preview-mobile">
             <div class="preview-mobile-screen">
-              <iframe src="Portfolio/E-commarce/Field%20%26%20Larder/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="Portfolio/E-commarce/Field%20%26%20Larder/index.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Field &amp; Larder mobile preview"></iframe>
             </div>
           </div>
           <div class="preview-overlay"></div>
@@ -239,7 +243,10 @@
 
   <footer>
     <div class="footer-grid">
-      <div><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"><p class="footer-tagline">Professional web design for businesses that want to stand out.</p></div>
+      <div>
+        <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="26">
+        <p class="footer-tagline">Professional web design for businesses that want to stand out.</p>
+      </div>
       <div class="footer-col"><h4>Services</h4><a href="services.html">Websites</a><a href="services.html">E-Commerce</a></div>
       <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a></div>
       <div class="footer-col"><h4>Contact</h4><a href="mailto:oxinur22@gmail.com">oxinur22@gmail.com</a></div>
@@ -248,7 +255,8 @@
   </footer>
 </main>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/chatbot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>

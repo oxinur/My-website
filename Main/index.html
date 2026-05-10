@@ -33,7 +33,8 @@
   <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="Logo/Oxinur_transparent_white.png">
 
   <!-- Favicons -->
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
@@ -43,6 +44,7 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/chatbot.css">
 
@@ -80,72 +82,79 @@
   </script>
 </head>
 <body>
-<!-- NAV -->
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;left:12px;top:12px;width:auto;height:auto;padding:8px 14px;background:#0a1628;color:#fff;z-index:9999;border-radius:6px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
-<nav aria-label="Primary">
-  <div class="nav-logo">
-    <a href="index.html" aria-label="Oxinur home"><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"></a>
-  </div>
-  <div class="nav-links">
-    <a href="index.html" class="active" id="nav-home">Home</a>
-    <a href="services.html" id="nav-services">Services</a>
-    <a href="portfolio.html" id="nav-portfolio">Portfolio</a>
-    <a href="pricing.html" id="nav-pricing">Pricing</a>
-    <a href="about.html" id="nav-about">About Us</a>
-    <a href="contact.html" id="nav-contact">Contact</a>
-    <a href="contact.html" class="nav-cta">Get a Quote</a>
-  </div>
-  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav(this)">
-    <span></span><span></span><span></span>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg fixed-top oxi-nav" aria-label="Primary">
+  <a class="navbar-brand" href="index.html" aria-label="Oxinur home">
+    <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="28">
+  </a>
+  <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#oxiNavCollapse" aria-controls="oxiNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="oxi-bar"></span><span class="oxi-bar"></span><span class="oxi-bar"></span>
   </button>
+  <div class="collapse navbar-collapse justify-content-end" id="oxiNavCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Get a Quote</a></li>
+    </ul>
+  </div>
 </nav>
 
-<main class="page active" id="page-home" role="main"><span id="main-content"></span>
+<main class="page" id="page-home" role="main"><span id="main-content"></span>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div>
-        <div class="hero-label">Professional Web Design Agency</div>
-        <h1>Websites that <em>grow</em> your business</h1>
-        <p>We create bespoke, professional websites that make a lasting impression — designed and built by our expert team, tailored to your brand.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="contact.html">Get a Free Quote</a>
-          <a class="btn-secondary" href="portfolio.html">View Our Work</a>
+    <div class="container hero-content">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="hero-label">Professional Web Design Agency</div>
+          <h1>Websites that <em>grow</em> your business</h1>
+          <p>We create bespoke, professional websites that make a lasting impression — designed and built by our expert team, tailored to your brand.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="contact.html">Get a Free Quote</a>
+            <a class="btn-secondary" href="portfolio.html">View Our Work</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <span class="hero-stat-num">150+</span>
+              <span class="hero-stat-label">Websites delivered</span>
+            </div>
+            <div>
+              <span class="hero-stat-num">5★</span>
+              <span class="hero-stat-label">Average rating</span>
+            </div>
+            <div>
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">UK-based team</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div>
-            <span class="hero-stat-num">150+</span>
-            <span class="hero-stat-label">Websites delivered</span>
-          </div>
-          <div>
-            <span class="hero-stat-num">5★</span>
-            <span class="hero-stat-label">Average rating</span>
-          </div>
-          <div>
-            <span class="hero-stat-num">100%</span>
-            <span class="hero-stat-label">UK-based team</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="browser-mock">
-          <div class="browser-bar">
-            <div class="browser-dot" style="background:#ff5f57"></div>
-            <div class="browser-dot" style="background:#febc2e"></div>
-            <div class="browser-dot" style="background:#28c840"></div>
-            <div class="browser-url">yourwebsite.co.uk</div>
-          </div>
-          <div class="browser-content">
-            <div class="mock-header"></div>
-            <div class="mock-line" style="width:80%"></div>
-            <div class="mock-line" style="width:65%"></div>
-            <div class="mock-line" style="width:45%"></div>
-            <div class="mock-cards">
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
-              <div class="mock-card"></div>
+        <div class="col-lg-6">
+          <div class="hero-visual">
+            <div class="browser-mock">
+              <div class="browser-bar">
+                <div class="browser-dot" style="background:#ff5f57"></div>
+                <div class="browser-dot" style="background:#febc2e"></div>
+                <div class="browser-dot" style="background:#28c840"></div>
+                <div class="browser-url">yourwebsite.co.uk</div>
+              </div>
+              <div class="browser-content">
+                <div class="mock-header"></div>
+                <div class="mock-line" style="width:80%"></div>
+                <div class="mock-line" style="width:65%"></div>
+                <div class="mock-line" style="width:45%"></div>
+                <div class="mock-cards">
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -174,12 +183,12 @@
         </div>
         <div class="service-card">
           <div class="service-icon">📈</div>
-          <h3>SEO & Marketing</h3>
+          <h3>SEO &amp; Marketing</h3>
           <p>Built-in search optimisation and marketing support to drive traffic and grow your online presence.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🎨</div>
-          <h3>Logo & Branding</h3>
+          <h3>Logo &amp; Branding</h3>
           <p>Professional logo design and brand identity to ensure your business looks polished across every platform.</p>
         </div>
       </div>
@@ -193,7 +202,7 @@
         <span class="eyebrow">How it works</span>
         <h2 class="section-title">Simple, <em>transparent</em> process</h2>
       </div>
-      <div class="process-steps" style="border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden;">
+      <div class="process-steps">
         <div class="process-step">
           <div class="step-num">01</div>
           <h4>Discovery Call</h4>
@@ -201,15 +210,15 @@
         </div>
         <div class="process-step">
           <div class="step-num">02</div>
-          <h4>Design & Build</h4>
+          <h4>Design &amp; Build</h4>
           <p>Our team designs and develops your bespoke website with regular check-ins.</p>
         </div>
         <div class="process-step">
           <div class="step-num">03</div>
-          <h4>Review & Refine</h4>
+          <h4>Review &amp; Refine</h4>
           <p>You review the site and we make any tweaks until you're completely happy.</p>
         </div>
-        <div class="process-step" style="border-right: none;">
+        <div class="process-step">
           <div class="step-num">04</div>
           <h4>Go Live</h4>
           <p>We launch your website and provide ongoing support to keep things running smoothly.</p>
@@ -269,7 +278,7 @@
     <p>Get a free, no-obligation quote from our team today.</p>
     <div class="cta-actions">
       <a class="btn-primary" href="contact.html">Get a Free Quote</a>
-      <a class="btn-secondary" href="pricing.html" style="border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 13px 32px; border-radius: var(--radius); font-size: 15px; text-decoration: none; font-family: 'DM Sans', sans-serif; cursor:pointer;">See Pricing</a>
+      <a class="btn-secondary" href="pricing.html">See Pricing</a>
     </div>
   </div>
 
@@ -277,14 +286,14 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur">
+        <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="26">
         <p class="footer-tagline">Professional web design for businesses that want to stand out. UK-based, human-led.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <a href="services.html">Business Websites</a>
         <a href="services.html">E-Commerce</a>
-        <a href="services.html">SEO & Marketing</a>
+        <a href="services.html">SEO &amp; Marketing</a>
         <a href="services.html">Logo Design</a>
       </div>
       <div class="footer-col">
@@ -308,7 +317,8 @@
   </footer>
 </main>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/chatbot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>

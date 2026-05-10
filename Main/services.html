@@ -29,7 +29,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="Logo/Oxinur_transparent_white.png">
 
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
@@ -38,6 +39,7 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/chatbot.css">
 
@@ -47,42 +49,10 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "itemListElement": [
-      {
-        "@type": "Service",
-        "position": 1,
-        "name": "Business Websites",
-        "serviceType": "Web Design",
-        "provider": { "@id": "https://oxinur.com/#organization" },
-        "areaServed": { "@type": "Country", "name": "United Kingdom" },
-        "description": "Bespoke, conversion-focused websites for small and growing businesses."
-      },
-      {
-        "@type": "Service",
-        "position": 2,
-        "name": "E-Commerce Stores",
-        "serviceType": "E-commerce Development",
-        "provider": { "@id": "https://oxinur.com/#organization" },
-        "areaServed": { "@type": "Country", "name": "United Kingdom" },
-        "description": "Shopify and WooCommerce stores designed to convert browsers into buyers."
-      },
-      {
-        "@type": "Service",
-        "position": 3,
-        "name": "SEO & Digital Marketing",
-        "serviceType": "Search Engine Optimization",
-        "provider": { "@id": "https://oxinur.com/#organization" },
-        "areaServed": { "@type": "Country", "name": "United Kingdom" },
-        "description": "On-page SEO, technical SEO and digital marketing to grow organic traffic."
-      },
-      {
-        "@type": "Service",
-        "position": 4,
-        "name": "Logo & Brand Identity",
-        "serviceType": "Brand Design",
-        "provider": { "@id": "https://oxinur.com/#organization" },
-        "areaServed": { "@type": "Country", "name": "United Kingdom" },
-        "description": "Logos, brand systems and visual identity tailored to your business."
-      }
+      { "@type": "Service", "position": 1, "name": "Business Websites", "serviceType": "Web Design", "provider": { "@id": "https://oxinur.com/#organization" }, "areaServed": { "@type": "Country", "name": "United Kingdom" }, "description": "Bespoke, conversion-focused websites for small and growing businesses." },
+      { "@type": "Service", "position": 2, "name": "E-Commerce Stores", "serviceType": "E-commerce Development", "provider": { "@id": "https://oxinur.com/#organization" }, "areaServed": { "@type": "Country", "name": "United Kingdom" }, "description": "Shopify and WooCommerce stores designed to convert browsers into buyers." },
+      { "@type": "Service", "position": 3, "name": "SEO & Digital Marketing", "serviceType": "Search Engine Optimization", "provider": { "@id": "https://oxinur.com/#organization" }, "areaServed": { "@type": "Country", "name": "United Kingdom" }, "description": "On-page SEO, technical SEO and digital marketing to grow organic traffic." },
+      { "@type": "Service", "position": 4, "name": "Logo & Brand Identity", "serviceType": "Brand Design", "provider": { "@id": "https://oxinur.com/#organization" }, "areaServed": { "@type": "Country", "name": "United Kingdom" }, "description": "Logos, brand systems and visual identity tailored to your business." }
     ]
   }
   </script>
@@ -99,27 +69,29 @@
   </script>
 </head>
 <body>
-<!-- NAV -->
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.cssText='position:fixed;left:12px;top:12px;width:auto;height:auto;padding:8px 14px;background:#0a1628;color:#fff;z-index:9999;border-radius:6px;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
-<nav aria-label="Primary">
-  <div class="nav-logo">
-    <a href="index.html" aria-label="Oxinur home"><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"></a>
-  </div>
-  <div class="nav-links">
-    <a href="index.html" id="nav-home">Home</a>
-    <a href="services.html" class="active" id="nav-services">Services</a>
-    <a href="portfolio.html" id="nav-portfolio">Portfolio</a>
-    <a href="pricing.html" id="nav-pricing">Pricing</a>
-    <a href="about.html" id="nav-about">About Us</a>
-    <a href="contact.html" id="nav-contact">Contact</a>
-    <a href="contact.html" class="nav-cta">Get a Quote</a>
-  </div>
-  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav(this)">
-    <span></span><span></span><span></span>
+
+<nav class="navbar navbar-expand-lg fixed-top oxi-nav" aria-label="Primary">
+  <a class="navbar-brand" href="index.html" aria-label="Oxinur home">
+    <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="28">
+  </a>
+  <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#oxiNavCollapse" aria-controls="oxiNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="oxi-bar"></span><span class="oxi-bar"></span><span class="oxi-bar"></span>
   </button>
+  <div class="collapse navbar-collapse justify-content-end" id="oxiNavCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" aria-current="page" href="services.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Get a Quote</a></li>
+    </ul>
+  </div>
 </nav>
 
-<main class="page active" id="page-services" role="main"><span id="main-content"></span>
+<main class="page" id="page-services" role="main"><span id="main-content"></span>
   <div class="page-hero">
     <div class="page-hero-content">
       <span class="eyebrow" style="color: var(--gold-light); display:block; margin-bottom:12px;">What We Offer</span>
@@ -130,52 +102,52 @@
 
   <div class="section">
     <!-- Websites -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
+    <div class="service-feature">
       <div>
         <span class="eyebrow">Service 01</span>
         <h2 class="section-title">Business <em>Websites</em></h2>
-        <p style="font-size:16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 28px;">Every website we build is designed from scratch — no templates, no shortcuts. You get a dedicated project manager, a bespoke design, and a site that's built to rank on Google.</p>
-        <ul style="list-style: none;">
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Unique bespoke design</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> WordPress CMS — easy to update</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Mobile-responsive on all devices</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> SEO-ready from day one</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Free logo design included</li>
+        <p class="lead-p">Every website we build is designed from scratch — no templates, no shortcuts. You get a dedicated project manager, a bespoke design, and a site that's built to rank on Google.</p>
+        <ul>
+          <li><span class="check">✓</span> Unique bespoke design</li>
+          <li><span class="check">✓</span> WordPress CMS — easy to update</li>
+          <li><span class="check">✓</span> Mobile-responsive on all devices</li>
+          <li><span class="check">✓</span> SEO-ready from day one</li>
+          <li><span class="check">✓</span> Free logo design included</li>
         </ul>
         <a class="btn-primary" href="pricing.html" style="margin-top: 24px; display: inline-block;">See Pricing</a>
       </div>
-      <div style="background: linear-gradient(135deg, var(--navy) 0%, #1e3560 100%); border-radius: var(--radius-lg); height: 360px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🌐</div>
+      <div class="service-feature-art art-a">🌐</div>
     </div>
 
     <!-- Ecommerce -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
-      <div style="background: linear-gradient(135deg, #1e3560 0%, var(--navy) 100%); border-radius: var(--radius-lg); height: 360px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🛒</div>
+    <div class="service-feature">
+      <div class="service-feature-art art-b">🛒</div>
       <div>
         <span class="eyebrow">Service 02</span>
         <h2 class="section-title">E-Commerce <em>Stores</em></h2>
-        <p style="font-size:16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 28px;">Sell online with a fully custom store that's secure, fast, and easy to manage. From product listings to checkout and beyond — we build it all.</p>
-        <ul style="list-style: none;">
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Unlimited product listings</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Stripe & PayPal integration</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Order management dashboard</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Discount codes & promotions</li>
-          <li style="display:flex; gap:10px; margin-bottom:12px; font-size:14px; color: var(--gray-600);"><span class="check">✓</span> Advanced sales reporting</li>
+        <p class="lead-p">Sell online with a fully custom store that's secure, fast, and easy to manage. From product listings to checkout and beyond — we build it all.</p>
+        <ul>
+          <li><span class="check">✓</span> Unlimited product listings</li>
+          <li><span class="check">✓</span> Stripe &amp; PayPal integration</li>
+          <li><span class="check">✓</span> Order management dashboard</li>
+          <li><span class="check">✓</span> Discount codes &amp; promotions</li>
+          <li><span class="check">✓</span> Advanced sales reporting</li>
         </ul>
         <a class="btn-primary" href="pricing.html" style="margin-top: 24px; display: inline-block;">See Pricing</a>
       </div>
     </div>
 
     <!-- SEO + Logo side by side -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
-      <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 40px 36px;">
+    <div class="service-mini-grid">
+      <div class="service-mini">
         <div class="service-icon">📈</div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 12px;">SEO & Digital Marketing</h3>
-        <p style="font-size: 14px; color: var(--gray-600); line-height: 1.7;">All websites include on-page SEO as standard. We also offer ongoing SEO packages, Google Ads management, and social media campaigns.</p>
+        <h3>SEO &amp; Digital Marketing</h3>
+        <p>All websites include on-page SEO as standard. We also offer ongoing SEO packages, Google Ads management, and social media campaigns.</p>
       </div>
-      <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 40px 36px;">
+      <div class="service-mini">
         <div class="service-icon">🎨</div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 12px;">Logo & Brand Identity</h3>
-        <p style="font-size: 14px; color: var(--gray-600); line-height: 1.7;">A professional logo is included free with every website package. Get three concepts from our designers, then we refine your favourite until it's perfect.</p>
+        <h3>Logo &amp; Brand Identity</h3>
+        <p>A professional logo is included free with every website package. Get three concepts from our designers, then we refine your favourite until it's perfect.</p>
       </div>
     </div>
   </div>
@@ -190,7 +162,10 @@
 
   <footer>
     <div class="footer-grid">
-      <div><img src="Logo/Oxinur_transparent_white.png" alt="Oxinur"><p class="footer-tagline">Professional web design for businesses that want to stand out.</p></div>
+      <div>
+        <img src="Logo/Oxinur_transparent_white.png" alt="Oxinur" width="120" height="26">
+        <p class="footer-tagline">Professional web design for businesses that want to stand out.</p>
+      </div>
       <div class="footer-col"><h4>Services</h4><a href="services.html">Websites</a><a href="services.html">E-Commerce</a><a href="services.html">SEO</a></div>
       <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a></div>
       <div class="footer-col"><h4>Contact</h4><a href="mailto:oxinur22@gmail.com">oxinur22@gmail.com</a></div>
@@ -199,7 +174,8 @@
   </footer>
 </main>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/chatbot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>
